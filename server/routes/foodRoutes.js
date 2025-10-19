@@ -8,7 +8,11 @@ router.get('/', async (req, res) => {
     const foods = await Food.find().sort({ timestamp: -1 });
     res.json(foods);
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching food listings', error: error.message });
+    console.error('Error fetching food listings:', error);
+    res.status(500).json({ 
+      message: 'Error fetching food listings', 
+      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+    });
   }
 });
 
@@ -33,7 +37,11 @@ router.post('/', async (req, res) => {
     const savedFood = await food.save();
     res.status(201).json(savedFood);
   } catch (error) {
-    res.status(500).json({ message: 'Error creating food listing', error: error.message });
+    console.error('Error creating food listing:', error);
+    res.status(500).json({ 
+      message: 'Error creating food listing', 
+      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+    });
   }
 });
 
