@@ -22,10 +22,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use('/api/food', foodRoutes);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
   console.log('Connected to MongoDB');
 })
