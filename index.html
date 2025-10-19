@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeftoverLink - Share Food, Not Waste</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .primary-50 { background-color: #f0fdf4; }
+        .primary-100 { background-color: #dcfce7; }
+        .primary-500 { background-color: #10b981; }
+        .primary-600 { background-color: #059669; }
+        .primary-700 { background-color: #047857; }
+        .beige-50 { background-color: #fefdf8; }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-beige-50 to-primary-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-primary-600">LeftoverLink</h1>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-primary-600 bg-primary-50">Home</a>
+                    <a href="#add-food" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Add Food</a>
+                    <a href="#available-food" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Available Food</a>
+                    <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-r from-primary-500 to-primary-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Share Food, Not Waste</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    Connect with your community to reduce food waste. Share your leftovers 
+                    and find fresh food when you need it.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#add-food" class="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors duration-200">
+                        Share Your Food
+                    </a>
+                    <a href="#available-food" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors duration-200">
+                        Find Food
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">How It Works</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Simple steps to reduce food waste in your community
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Share Your Food</h3>
+                    <p class="text-gray-600">Post your leftover food with details about quantity, location, and expiry time.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Find Food</h3>
+                    <p class="text-gray-600">Browse available food listings in your area and connect with people sharing.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Reduce Waste</h3>
+                    <p class="text-gray-600">Together we can make a positive impact on food waste and help our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Food Section -->
+    <section id="add-food" class="py-16 bg-primary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Share Your Food</h2>
+
+                    <form id="foodForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Food Name *</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                placeholder="e.g., Pizza, Salad, Bread">
+                        </div>
+
+                        <div>
+                            <label for="quantity" class="block text-sm font-medium text-gray-700 mb-2">Quantity *</label>
+                            <input type="text" id="quantity" name="quantity" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                placeholder="e.g., 2 slices, 1 bowl, 3 pieces">
+                        </div>
+
+                        <div>
+                            <label for="expiry" class="block text-sm font-medium text-gray-700 mb-2">Expiry Date & Time *</label>
+                            <input type="datetime-local" id="expiry" name="expiry" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label for="location" class="block text-sm font-medium text-gray-700 mb-2">Location *</label>
+                            <input type="text" id="location" name="location" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                placeholder="e.g., Downtown, University Area, Main Street">
+                        </div>
+
+                        <div>
+                            <label for="contact" class="block text-sm font-medium text-gray-700 mb-2">Contact Information *</label>
+                            <input type="text" id="contact" name="contact" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                placeholder="e.g., Phone number, Email, or Social media">
+                        </div>
+
+                        <button type="submit" id="submitBtn"
+                            class="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-200">
+                            Share Food
+                        </button>
+                    </form>
+
+                    <div id="successMessage" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+                        Food listing added successfully!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Food Section -->
+    <section id="available-food" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Available Food</h1>
+                <p class="text-lg text-gray-600">Find fresh food shared by your community</p>
+            </div>
+
+            <div id="foodList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Food cards will be dynamically added here -->
+            </div>
+
+            <div id="noFoodMessage" class="text-center py-12 hidden">
+                <div class="text-6xl mb-4">🍽️</div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">No food available right now</h3>
+                <p class="text-gray-600 mb-6">Be the first to share your food with the community!</p>
+                <a href="#add-food" class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-200">
+                    Share Your Food
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-primary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">About LeftoverLink</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We're on a mission to reduce food waste and build stronger communities 
+                    through the simple act of sharing.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Mission</h2>
+                    <p class="text-lg text-gray-600 mb-4">
+                        LeftoverLink was born from a simple idea: what if we could connect people 
+                        who have extra food with those who need it? In a world where millions 
+                        go hungry while tons of food goes to waste, we believe technology can 
+                        bridge this gap.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Our platform makes it easy for individuals, restaurants, and organizations 
+                        to share their surplus food with their community, reducing waste and 
+                        helping those in need.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">The Impact</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">🌍</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Environmental</h3>
+                                <p class="text-gray-600">Reducing food waste helps combat climate change</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">🤝</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Community</h3>
+                                <p class="text-gray-600">Building connections and strengthening neighborhoods</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">❤️</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Social</h3>
+                                <p class="text-gray-600">Ensuring no one goes hungry in our communities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Join Our Community</h2>
+                <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                    Every shared meal makes a difference. Whether you're sharing your 
+                    leftovers or looking for food, you're part of a movement that values 
+                    sustainability and community care.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#add-food" class="bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-200">
+                        Start Sharing
+                    </a>
+                    <a href="#available-food" class="border-2 border-primary-600 text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-colors duration-200">
+                        Find Food
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple local storage for demo purposes
+        let foods = JSON.parse(localStorage.getItem('leftoverlink-foods') || '[]');
+
+        // Form submission
+        document.getElementById('foodForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const food = {
+                id: Date.now(),
+                name: formData.get('name'),
+                quantity: formData.get('quantity'),
+                expiry: formData.get('expiry'),
+                location: formData.get('location'),
+                contact: formData.get('contact'),
+                timestamp: new Date().toISOString()
+            };
+            
+            foods.push(food);
+            localStorage.setItem('leftoverlink-foods', JSON.stringify(foods));
+            
+            // Show success message
+            document.getElementById('successMessage').classList.remove('hidden');
+            this.reset();
+            
+            // Refresh food list
+            displayFoods();
+            
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.add('hidden');
+            }, 3000);
+        });
+
+        // Display foods
+        function displayFoods() {
+            const foodList = document.getElementById('foodList');
+            const noFoodMessage = document.getElementById('noFoodMessage');
+            
+            if (foods.length === 0) {
+                foodList.innerHTML = '';
+                noFoodMessage.classList.remove('hidden');
+                return;
+            }
+            
+            noFoodMessage.classList.add('hidden');
+            
+            foodList.innerHTML = foods.map(food => {
+                const expiryDate = new Date(food.expiry);
+                const now = new Date();
+                const diffInHours = Math.ceil((expiryDate - now) / (1000 * 60 * 60));
+                
+                let timeRemaining = 'Expired';
+                let urgencyColor = 'text-red-600';
+                
+                if (diffInHours > 0) {
+                    if (diffInHours < 24) {
+                        timeRemaining = `${diffInHours} hours left`;
+                        urgencyColor = diffInHours < 6 ? 'text-red-500' : 'text-yellow-500';
+                    } else {
+                        const days = Math.floor(diffInHours / 24);
+                        timeRemaining = `${days} day${days > 1 ? 's' : ''} left`;
+                        urgencyColor = 'text-green-600';
+                    }
+                }
+                
+                return `
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">${food.name}</h3>
+                                <span class="text-sm font-medium ${urgencyColor}">${timeRemaining}</span>
+                            </div>
+                            <div class="space-y-2 mb-4">
+                                <p class="text-gray-600"><span class="font-medium">Quantity:</span> ${food.quantity}</p>
+                                <p class="text-gray-600"><span class="font-medium">Location:</span> ${food.location}</p>
+                                <p class="text-gray-600"><span class="font-medium">Contact:</span> ${food.contact}</p>
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                Posted ${new Date(food.timestamp).toLocaleDateString()}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Initialize
+        displayFoods();
+    </script>
+</body>
+</html>
